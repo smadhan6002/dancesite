@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import contactImage from '../assets/raiveeson_7a2e458cf19d45658d947283309892cd.jpg'
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -142,7 +143,7 @@ Thank you.`
             <div>
               <div style={{ position: 'relative', overflow: 'hidden', marginBottom: '32px', border: '1px solid var(--gold)', padding: '12px' }}>
                 <img
-                  src="src/assets/raiveeson_7a2e458cf19d45658d947283309892cd.jpg"
+                  src={contactImage}
                   alt="Bharatanatyam dancer"
                   style={{
                     width: '100%', aspectRatio: '4/3',
