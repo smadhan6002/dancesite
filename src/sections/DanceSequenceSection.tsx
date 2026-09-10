@@ -74,18 +74,17 @@ export default function DanceSequenceSection() {
                   transition: prefersReducedMotion ? 'opacity 0.3s linear' : 'none',
                 }}
               >
-                <img
-                  src={f.src}
-                  alt=""
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 15%',
-                    transform: `scale(${camScale}) translateY(${camPanY}px)`,
-                    filter: 'saturate(0.92) contrast(1.05)',
-                  }}
-                />
+                  <img
+                    src={f.src}
+                    alt=""
+                    className="dance-seq-img"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      transform: `scale(${camScale}) translateY(${camPanY}px)`,
+                      filter: 'saturate(0.92) contrast(1.05)',
+                    }}
+                  />
               </div>
             )
           })}

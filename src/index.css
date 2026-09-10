@@ -243,3 +243,29 @@ body {
   }
 }
 
+/* Hero Section background styling */
+.hero-bg {
+  background-size: cover;
+  background-position: center 20%;
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    /* Use cover to fill the screen, but anchor to the top so faces aren't cut off */
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+/* Dance Sequence Images Responsive Styling */
+.dance-seq-img {
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+@media (max-width: 768px) {
+  .dance-seq-img {
+    object-fit: contain;
+    object-position: center center;
+  }
+}

@@ -25,10 +25,9 @@ export default function HeroSection() {
         style={{
           position: 'absolute', inset: 0, zIndex: 0,
           backgroundImage: `url('${heroImage}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 20%', // Shifted slightly to keep focus on dancer
           backgroundRepeat: 'no-repeat',
-        }} 
+        }}
+        className="hero-bg"
       />
 
       {/* Deep Purple Cinematic Overlay */}

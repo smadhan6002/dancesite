@@ -132,12 +132,12 @@ Thank you.`
         </FadeIn>
 
         {/* Two column: image info + form */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '80px',
-          alignItems: 'start',
-        }} className="contact-grid">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '80px',
+            alignItems: 'start',
+          }} className="contact-grid">
           {/* Left: image + studio info */}
           <FadeIn delay={0.1}>
             <div>

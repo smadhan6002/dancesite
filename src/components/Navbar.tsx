@@ -40,16 +40,22 @@ export default function Navbar() {
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(214, 168, 79, 0.2)' : '1px solid transparent',
         transition: 'all 0.4s ease',
+        // Ensure navbar respects viewport width
+        width: '100%',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 48px',
+        // Responsive horizontal padding
+        padding: '0 24px',
         height: scrolled ? '72px' : '96px', // Compacts on scroll
         maxWidth: '100%',
         transition: 'height 0.4s ease',
+        // Allow logo and brand to wrap on very small screens
+        flexWrap: 'wrap',
       }}>
         {/* Logo */}
         <a href="#" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
@@ -68,19 +74,21 @@ export default function Navbar() {
           <div>
             <div style={{
               fontFamily: "var(--font-display)",
-              fontSize: '16px',
-              fontWeight: 600,
-              letterSpacing: '0.15em',
-              color: 'var(--cream)',
-              textTransform: 'uppercase',
+               // Responsive logo text size using clamp
+               fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+               fontWeight: 600,
+               letterSpacing: '0.15em',
+               color: 'var(--cream)',
+               textTransform: 'uppercase',
             }}>CHATHUR LAKSHANA</div>
             <div style={{
               fontFamily: "var(--font-body)",
-              fontSize: '11px',
-              fontWeight: 500,
-              letterSpacing: '0.18em',
-              color: 'var(--color-accent)',
-              textTransform: 'uppercase',
+               // Responsive subtext size
+               fontSize: 'clamp(0.7rem, 1.5vw, 0.8rem)',
+               fontWeight: 500,
+               letterSpacing: '0.18em',
+               color: 'var(--color-accent)',
+               textTransform: 'uppercase',
             }}>ACADEMY OF FINE ARTS</div>
           </div>
         </a>
@@ -136,24 +144,24 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          style={{
-            display: 'none',
-            background: 'none',
-            border: '1px solid rgba(214, 168, 79, 0.4)',
-            cursor: 'pointer',
-            width: '40px', height: '40px',
-            alignItems: 'center', justifyContent: 'center',
-            flexDirection: 'column', gap: '5px',
-            padding: '8px',
-          }}
-          className="mobile-menu-btn"
-        >
-          <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'var(--cream)', transition: 'transform 0.3s ease', transform: mobileOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none' }} />
-          <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'var(--cream)', opacity: mobileOpen ? 0 : 1, transition: 'opacity 0.3s ease' }} />
-          <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'var(--cream)', transition: 'transform 0.3s ease', transform: mobileOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none' }} />
-        </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            style={{
+              background: 'none',
+              border: '1px solid rgba(214, 168, 79, 0.4)',
+              cursor: 'pointer',
+              width: '48px', height: '48px',
+              alignItems: 'center', justifyContent: 'center',
+              flexDirection: 'column', gap: '5px',
+              padding: '8px',
+              zIndex: 200,
+            }}
+            className="mobile-menu-btn"
+          >
+            <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'var(--cream)', transition: 'transform 0.3s ease', transform: mobileOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none' }} />
+            <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'var(--cream)', opacity: mobileOpen ? 0 : 1, transition: 'opacity 0.3s ease' }} />
+            <span style={{ display: 'block', width: '18px', height: '1.5px', backgroundColor: 'var(--cream)', transition: 'transform 0.3s ease', transform: mobileOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none' }} />
+          </button>
       </div>
 
       {/* Mobile Menu */}
@@ -165,11 +173,16 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             style={{
-              backgroundColor: 'var(--deep-purple)',
-              borderTop: '1px solid rgba(214, 168, 79, 0.2)',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
-            }}
+               position: 'fixed',
+               top: 0,
+               left: 0,
+               right: 0,
+               backgroundColor: 'var(--deep-purple)',
+               borderTop: '1px solid rgba(214, 168, 79, 0.2)',
+               overflow: 'hidden',
+               boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+               zIndex: 150,
+             }}
           >
             {navLinks.map(link => (
               <button
@@ -200,7 +213,14 @@ export default function Navbar() {
       <style>{`
         @media (max-width: 768px) {
           .mobile-menu-btn { display: flex !important; }
+          nav .btn-primary { display: none !important; }
+          /* Hide desktop navigation on mobile */
           nav > div > div:not(.mobile-menu-btn) { display: none !important; }
+          /* Ensure logo area wraps nicely */
+          nav a { flex-wrap: wrap; }
+        }
+        @media (min-width: 769px) {
+          .mobile-menu-btn { display: none !important; }
         }
       `}</style>
     </motion.nav>
