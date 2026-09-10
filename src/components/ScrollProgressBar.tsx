@@ -24,6 +24,7 @@ export default function ScrollProgressBar() {
         zIndex: 200,
         backgroundColor: 'transparent',
         pointerEvents: 'none',
+        opacity: progress > 0 ? 1 : 0,
       }}
     >
       <div

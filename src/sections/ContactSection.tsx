@@ -101,6 +101,9 @@ Thank you.`
         backgroundColor: 'var(--cream)',
         padding: '140px 0',
         position: 'relative',
+        width: '100%',
+        boxSizing: 'border-box',
+        margin: 0,
       }}
     >
       <div className="container">
