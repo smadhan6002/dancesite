@@ -144,7 +144,7 @@ Thank you.`
           {/* Left: image + studio info */}
           <FadeIn delay={0.1}>
             <div>
-              <div style={{ position: 'relative', overflow: 'hidden', marginBottom: '32px', border: '1px solid var(--gold)', padding: '12px' }}>
+            <div style={{ position: 'relative', overflow: 'hidden', marginBottom: '0', border: '1px solid var(--gold)', padding: '12px' }}>
                 <img
                   src={contactImage}
                   alt="Bharatanatyam dancer"
@@ -154,36 +154,40 @@ Thank you.`
                     filter: 'contrast(1.05)',
                   }}
                 />
-                {/* Overlay info */}
+              </div>
+
+              {/* Studio info — now below the image */}
+              <div style={{
+                border: '1px solid var(--color-border)',
+                borderTop: 'none',
+                padding: '24px 28px',
+                backgroundColor: 'var(--deep-purple)',
+                marginBottom: '24px',
+              }}>
                 <div style={{
-                  position: 'absolute', bottom: '12px', left: '12px', right: '12px',
-                  padding: '60px 28px 28px',
-                  background: 'linear-gradient(to top, rgba(36, 16, 45, 0.95), rgba(36, 16, 45, 0.6), transparent)',
+                  fontFamily: "var(--font-body)",
+                  fontSize: '12px', letterSpacing: '0.2em', fontWeight: 600,
+                  color: 'var(--gold)', textTransform: 'uppercase', marginBottom: '10px',
+                }}>STUDIO</div>
+                <p style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: '15px', color: 'var(--cream)', lineHeight: 1.6, fontWeight: 400,
+                  marginBottom: '20px',
                 }}>
-                  <div style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: '12px', letterSpacing: '0.2em', fontWeight: 600,
-                    color: 'var(--gold)', textTransform: 'uppercase', marginBottom: '10px',
-                  }}>STUDIO</div>
-                  <p style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: '16px', color: 'var(--cream)', lineHeight: 1.6, fontWeight: 400,
-                  }}>
-                    Chathur Lakshana Academy of Fine Arts,<br/>Mylapore, Chennai 600004
-                  </p>
-                  <div style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: '12px', letterSpacing: '0.2em', fontWeight: 600,
-                    color: 'var(--gold)', textTransform: 'uppercase',
-                    marginTop: '24px', marginBottom: '8px',
-                  }}>CLASS HOURS</div>
-                  <p style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: '16px', color: 'var(--cream)', fontWeight: 400,
-                  }}>
-                    Tue–Thu 5–8 pm · Sat &amp; Sun 8 am–1 pm
-                  </p>
-                </div>
+                  Chathur Lakshana Academy of Fine Arts,<br/>Mylapore, Chennai 600004
+                </p>
+                <div style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: '12px', letterSpacing: '0.2em', fontWeight: 600,
+                  color: 'var(--gold)', textTransform: 'uppercase',
+                  marginBottom: '8px',
+                }}>CLASS HOURS</div>
+                <p style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: '15px', color: 'var(--cream)', fontWeight: 400,
+                }}>
+                  Tue–Thu 5–8 pm · Sat &amp; Sun 8 am–1 pm
+                </p>
               </div>
 
               {/* Contact boxes */}
