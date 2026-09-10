@@ -103,7 +103,7 @@ Thank you.`
         position: 'relative',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 48px' }}>
+      <div className="container">
         {/* Header */}
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -184,7 +184,7 @@ Thank you.`
               </div>
 
               {/* Contact boxes */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="contact-info-grid" style={{ display: 'grid', gap: '16px' }}>
                 {[
                   { label: 'PHONE', value: '+91 98400 00000' },
                   { label: 'EMAIL', value: 'info@chathurlakshana.in' },
@@ -332,8 +332,12 @@ Thank you.`
       </div>
 
       <style>{`
+        .contact-info-grid {
+          grid-template-columns: 1fr 1fr;
+        }
         @media (max-width: 900px) {
           .contact-grid { grid-template-columns: 1fr !important; }
+          .contact-info-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

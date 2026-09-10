@@ -64,6 +64,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -71,6 +73,7 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: clamp(1.05rem, 1.5vw, 1.2rem);
